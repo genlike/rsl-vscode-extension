@@ -163,8 +163,7 @@
         "vscode-languageclient": "^5.2.1",
         "webpack": "^4.44.1",
         "webpack-cli": "^3.3.12",
-        "css-loader": "^4.2.1",
-        "snabbdom/vnode": "next"
+        "css-loader": "^4.2.1"
     },
     "scripts": {
         "prepare": "yarn run clean && yarn run build",
