@@ -141,6 +141,7 @@
     ],
     "files": [
         "lib",
+        "css",
         "extension",
         "server",
         "syntaxes",

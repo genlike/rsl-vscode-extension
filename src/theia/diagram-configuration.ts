@@ -1,5 +1,5 @@
 /********************************************************************************
- * Copyright (c) 2020 TypeFox and others.
+ * Copyright (c) 2017-2018 TypeFox and others.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0 which is available at
@@ -14,16 +14,20 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-/** @jsx html */
-import { html } from 'snabbdom-jsx';
+import { InstanceRegistry } from 'sprotty/lib/utils/registry';
+import { injectable, Container, multiInject, optional } from "inversify";
 
-import { RenderingContext, IView, SButton } from "sprotty";
-import { VNode } from "snabbdom/vnode";
-import { injectable } from 'inversify';
+export const DiagramConfiguration = Symbol('DiagramConfiguration');
+
+export interface DiagramConfiguration {
+    createContainer(widgetId: string): Container
+    readonly diagramType: string
+}
 
 @injectable()
-export class PaletteButtonView implements IView {
-    render(button: SButton, context: RenderingContext): VNode {
-        return <div>{button.id}</div>;
+export class DiagramConfigurationRegistry extends InstanceRegistry<DiagramConfiguration> {
+    constructor(@multiInject(DiagramConfiguration)@optional() diagramConfigs: DiagramConfiguration[]) {
+        super();
+        diagramConfigs.forEach(c => this.register(c.diagramType, c));
     }
 }
