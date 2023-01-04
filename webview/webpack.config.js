@@ -1,7 +1,7 @@
 // @ts-check
 const path = require('path');
 
-const outputPath = path.resolve(__dirname, '../extension/pack');
+const outputPath = path.resolve(__dirname, '../pack');
 
 /**@type {import('webpack').Configuration}*/
 const config = {
@@ -34,8 +34,7 @@ const config = {
                 use: ['style-loader', 'css-loader']
             }
         ]
-    },
-    node : { fs: 'empty', net: 'empty' }
+    }
 };
 
 module.exports = config;

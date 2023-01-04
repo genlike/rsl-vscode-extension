@@ -39,9 +39,9 @@ export class RSLLspVscodeExtension extends SprottyLspEditVscodeExtension {
             extension: this,
             identifier,
             localResourceRoots: [
-                this.getExtensionFileUri('extension','pack')
+                this.getExtensionFileUri('pack')
             ],
-            scriptUri: this.getExtensionFileUri('extension','pack', 'webview.js'),
+            scriptUri: this.getExtensionFileUri('pack', 'webview.js'),
             singleton: false // Change this to `true` to enable a singleton view
         });
         webview.addActionHandler(WorkspaceEditActionHandler);
