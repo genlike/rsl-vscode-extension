@@ -34,7 +34,8 @@ const config = {
                 use: ['style-loader', 'css-loader']
             }
         ]
-    }
+    },
+    node :{ fs: 'empty', net: 'empty' }
 };
 
 module.exports = config;
