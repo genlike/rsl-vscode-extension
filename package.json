@@ -167,7 +167,7 @@
         "css-loader": "^4.2.1"
     },
     "scripts": {
-        "prepare": "yarn run clean && yarn run build && yarn --cwd webview run clean && yarn --cwd webview run build",
+        "prepare": "yarn run clean && yarn run build",
         "clean": "rimraf lib pack",
         "build": "tsc && webpack --mode=development",
         "watch": "tsc -w",
