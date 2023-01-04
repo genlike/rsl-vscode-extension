@@ -201,7 +201,7 @@ fi
 
 set -- \
         -classpath "$CLASSPATH" \
-        org.eclipse.xtext.ide.server.ServerLauncher \
+        org.itlingo.rsl.ide.launch.RslLanguageServerSetup \
         "$@"
 
 # Use "xargs" to parse quoted args.
