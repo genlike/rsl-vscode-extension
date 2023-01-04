@@ -30,7 +30,7 @@ export class RSLLspVscodeExtension extends SprottyLspEditVscodeExtension {
     protected getDiagramType(commandArgs: any[]): string | undefined {
         if (commandArgs.length === 0
             || commandArgs[0] instanceof vscode.Uri && commandArgs[0].path.endsWith('.rsl')) {
-            return 'rsl-diagram';
+            return "rsl-diagram";
         }
     }
 
