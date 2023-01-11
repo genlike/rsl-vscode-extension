@@ -40,6 +40,7 @@ var statesDiagramModule = new inversify_1.ContainerModule(function (bind, unbind
         enable: [sprotty_1.editLabelFeature]
     });
     sprotty_1.configureModelElement(context, 'edge', sprotty_1.SEdge, views_1.PolylineArrowEdgeView);
+    sprotty_1.configureModelElement(context, 'button', sprotty_1.SButton, sprotty_1.RectangularNodeView);
     sprotty_1.configureModelElement(context, 'html', sprotty_1.HtmlRoot, sprotty_1.HtmlRootView);
     sprotty_1.configureModelElement(context, 'pre-rendered', sprotty_1.PreRenderedElement, sprotty_1.PreRenderedView);
     sprotty_1.configureModelElement(context, 'palette', sprotty_1.SModelRoot, sprotty_1.HtmlRootView);

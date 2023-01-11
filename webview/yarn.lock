@@ -2369,6 +2369,11 @@ snabbdom-virtualize@0.7.0:
   dependencies:
     html-parse-stringify2 "^2"
 
+snabbdom@0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/snabbdom/-/snabbdom-0.7.0.tgz#c09e2baa0f8d43d306a3aa7502b62fdde2b4154e"
+  integrity sha512-LCg6lH9p2OD5n52SI4LlpYmDW2bscxsyN7rhnGJB/R3LQy/FdJfqNBM5aVST+zOfM4OdKFl8pxVUhjGsPtQA1w==
+
 snabbdom@0.7.3:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/snabbdom/-/snabbdom-0.7.3.tgz#27b29b41228779ae5d99696a07edaaff4912fc54"

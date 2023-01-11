@@ -45,6 +45,7 @@
     "rimraf": "latest",
     "source-map-loader": "^1.0.2",
     "style-loader": "^1.2.1",
+    "snabbdom": "0.7.0",
     "ts-loader": "^8.0.3",
     "typescript": "3.8.3",
     "webpack": "^4.44.1",
