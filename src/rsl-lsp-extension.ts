@@ -17,7 +17,9 @@
 import * as path from 'path';
 import * as vscode from 'vscode';
 import { LanguageClient, LanguageClientOptions, ServerOptions } from 'vscode-languageclient';
-import { LspLabelEditActionHandler, WorkspaceEditActionHandler, SprottyLspEditVscodeExtension } from "sprotty-vscode/lib/lsp/editing";
+import { LspLabelEditActionHandler } from "sprotty-vscode/lib/lsp/editing";
+import { WorkspaceEditActionHandler,  } from 'sprotty-vscode/lib/lsp/editing/workspace-edit-action-handler';
+import { SprottyLspEditVscodeExtension }  from 'sprotty-vscode/lib/lsp/editing/sprotty-lsp-edit-vscode-extension';
 import { SprottyDiagramIdentifier, SprottyLspWebview } from 'sprotty-vscode/lib/lsp';
 import { SprottyWebview } from 'sprotty-vscode/lib/sprotty-webview';
 

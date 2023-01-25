@@ -12797,7 +12797,7 @@ var RSLLspVscodeExtension = /** @class */ (function (_super) {
     RSLLspVscodeExtension.prototype.getDiagramType = function (commandArgs) {
         if (commandArgs.length === 0
             || commandArgs[0] instanceof vscode__WEBPACK_IMPORTED_MODULE_1__["Uri"] && commandArgs[0].path.endsWith('.rsl')) {
-            return 'rsl-diagram';
+            return "rsl-diagram";
         }
     };
     RSLLspVscodeExtension.prototype.createWebView = function (identifier) {

@@ -35,7 +35,7 @@ const config = {
             }
         ]
     },
-    node :{ fs: 'empty', net: 'empty' }
+    node : { fs: 'empty', net: 'empty' }
 };
 
 module.exports = config;

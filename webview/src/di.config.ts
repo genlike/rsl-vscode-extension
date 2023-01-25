@@ -21,7 +21,7 @@ import { Container, ContainerModule } from 'inversify';
 import {
     configureCommand, configureModelElement, ConsoleLogger, CreateElementCommand, HtmlRoot,
     HtmlRootView, LogLevel, ManhattanEdgeRouter, overrideViewerOptions, PreRenderedElement,
-    PreRenderedView, RectangularNodeView, SEdge, SGraphView, SLabelView, SModelRoot,SButton,
+    PreRenderedView, RectangularNodeView, SEdge, SGraphView, SLabelView, SModelRoot,
     SRoutingHandle, SRoutingHandleView, TYPES, loadDefaultModules, SGraph, SLabel,
     hoverFeedbackFeature, popupFeature, creatingOnDragFeature, editLabelFeature, labelEditUiModule
 } from 'sprotty';
@@ -48,7 +48,6 @@ const statesDiagramModule = new ContainerModule((bind, unbind, isBound, rebind) 
         enable: [editLabelFeature]
     });
     configureModelElement(context, 'edge', SEdge, PolylineArrowEdgeView);
-    configureModelElement(context, 'button', SButton, RectangularNodeView);
     configureModelElement(context, 'html', HtmlRoot, HtmlRootView);
     configureModelElement(context, 'pre-rendered', PreRenderedElement, PreRenderedView);
     configureModelElement(context, 'palette', SModelRoot, HtmlRootView);
