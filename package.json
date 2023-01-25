@@ -149,9 +149,7 @@
     ],
     "main": "./pack/rsl-extension",
     "dependencies": {
-        "sprotty-vscode": "^0.1.0",
-        "sprotty": "next",
-        "sprotty-vscode-webview": "^0.1.0"
+        "sprotty-vscode": "^0.1.0"
     },
     "devDependencies": {
         "@types/node": "^8.0.0",
@@ -162,9 +160,9 @@
         "tslint": "^5.11.0",
         "typescript": "3.8.3",
         "vscode-languageclient": "^5.2.1",
+        "vscode-languageserver": "^5.2.1",
         "webpack": "^4.44.1",
-        "webpack-cli": "^3.3.12",
-        "css-loader": "^4.2.1"
+        "webpack-cli": "^3.3.12"
     },
     "scripts": {
         "prepare": "yarn run clean && yarn run build",
