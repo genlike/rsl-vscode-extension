@@ -12754,8 +12754,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vscode_languageclient__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vscode_languageclient__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var sprotty_vscode_lib_lsp_editing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sprotty-vscode/lib/lsp/editing */ "./node_modules/sprotty-vscode/lib/lsp/editing/index.js");
 /* harmony import */ var sprotty_vscode_lib_lsp_editing__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sprotty_vscode_lib_lsp_editing__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var sprotty_vscode_lib_lsp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sprotty-vscode/lib/lsp */ "./node_modules/sprotty-vscode/lib/lsp/index.js");
-/* harmony import */ var sprotty_vscode_lib_lsp__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sprotty_vscode_lib_lsp__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var sprotty_vscode_lib_lsp_editing_workspace_edit_action_handler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sprotty-vscode/lib/lsp/editing/workspace-edit-action-handler */ "./node_modules/sprotty-vscode/lib/lsp/editing/workspace-edit-action-handler.js");
+/* harmony import */ var sprotty_vscode_lib_lsp_editing_workspace_edit_action_handler__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sprotty_vscode_lib_lsp_editing_workspace_edit_action_handler__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var sprotty_vscode_lib_lsp_editing_sprotty_lsp_edit_vscode_extension__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sprotty-vscode/lib/lsp/editing/sprotty-lsp-edit-vscode-extension */ "./node_modules/sprotty-vscode/lib/lsp/editing/sprotty-lsp-edit-vscode-extension.js");
+/* harmony import */ var sprotty_vscode_lib_lsp_editing_sprotty_lsp_edit_vscode_extension__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sprotty_vscode_lib_lsp_editing_sprotty_lsp_edit_vscode_extension__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var sprotty_vscode_lib_lsp__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! sprotty-vscode/lib/lsp */ "./node_modules/sprotty-vscode/lib/lsp/index.js");
+/* harmony import */ var sprotty_vscode_lib_lsp__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(sprotty_vscode_lib_lsp__WEBPACK_IMPORTED_MODULE_6__);
 /********************************************************************************
  * Copyright (c) 2018 TypeFox and others.
  *
@@ -12789,6 +12793,8 @@ var __extends = (undefined && undefined.__extends) || (function () {
 
 
 
+
+
 var RSLLspVscodeExtension = /** @class */ (function (_super) {
     __extends(RSLLspVscodeExtension, _super);
     function RSLLspVscodeExtension(context) {
@@ -12801,7 +12807,7 @@ var RSLLspVscodeExtension = /** @class */ (function (_super) {
         }
     };
     RSLLspVscodeExtension.prototype.createWebView = function (identifier) {
-        var webview = new sprotty_vscode_lib_lsp__WEBPACK_IMPORTED_MODULE_4__["SprottyLspWebview"]({
+        var webview = new sprotty_vscode_lib_lsp__WEBPACK_IMPORTED_MODULE_6__["SprottyLspWebview"]({
             extension: this,
             identifier: identifier,
             localResourceRoots: [
@@ -12810,7 +12816,7 @@ var RSLLspVscodeExtension = /** @class */ (function (_super) {
             scriptUri: this.getExtensionFileUri('pack', 'webview.js'),
             singleton: false // Change this to `true` to enable a singleton view
         });
-        webview.addActionHandler(sprotty_vscode_lib_lsp_editing__WEBPACK_IMPORTED_MODULE_3__["WorkspaceEditActionHandler"]);
+        webview.addActionHandler(sprotty_vscode_lib_lsp_editing_workspace_edit_action_handler__WEBPACK_IMPORTED_MODULE_4__["WorkspaceEditActionHandler"]);
         webview.addActionHandler(sprotty_vscode_lib_lsp_editing__WEBPACK_IMPORTED_MODULE_3__["LspLabelEditActionHandler"]);
         return webview;
     };
@@ -12836,7 +12842,7 @@ var RSLLspVscodeExtension = /** @class */ (function (_super) {
         return languageClient;
     };
     return RSLLspVscodeExtension;
-}(sprotty_vscode_lib_lsp_editing__WEBPACK_IMPORTED_MODULE_3__["SprottyLspEditVscodeExtension"]));
+}(sprotty_vscode_lib_lsp_editing_sprotty_lsp_edit_vscode_extension__WEBPACK_IMPORTED_MODULE_5__["SprottyLspEditVscodeExtension"]));
 
 
 

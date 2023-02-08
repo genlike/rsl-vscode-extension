@@ -14,9 +14,13 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-import * as path from 'path';
+// import * as path from 'path';
+
+import * as net from 'net';
 import * as vscode from 'vscode';
-import { LanguageClient, LanguageClientOptions, ServerOptions } from 'vscode-languageclient';
+
+
+import { LanguageClient, LanguageClientOptions, StreamInfo } from 'vscode-languageclient';
 import { LspLabelEditActionHandler } from "sprotty-vscode/lib/lsp/editing";
 import { WorkspaceEditActionHandler,  } from 'sprotty-vscode/lib/lsp/editing/workspace-edit-action-handler';
 import { SprottyLspEditVscodeExtension }  from 'sprotty-vscode/lib/lsp/editing/sprotty-lsp-edit-vscode-extension';
@@ -52,22 +56,44 @@ export class RSLLspVscodeExtension extends SprottyLspEditVscodeExtension {
     }
 
     protected activateLanguageClient(context: vscode.ExtensionContext): LanguageClient {
-        const executable = process.platform === 'win32' ? 'start-ls-itlingo.bat' : 'start-ls-itlingo';
-        const languageServerPath =  path.join('server', 'mydsl', 'bin', executable);
-        const serverLauncher = context.asAbsolutePath(languageServerPath);
-        const serverOptions: ServerOptions = {
-            run: {
-                command: serverLauncher,
-                args: ['-trace']
-            },
-            debug: {
-                command: serverLauncher,
-                args: ['-trace']
-            }
+
+        let connectionInfo = {
+            port: 5008
         };
-        const clientOptions: LanguageClientOptions = {
-            documentSelector: [{ scheme: 'file', language: 'rsl' }],
+        let serverOptions = () => {
+            // Connect to language server via socket
+            let socket = net.connect(connectionInfo);
+            let result: StreamInfo = {
+                writer: socket,
+                reader: socket
+            };
+            return Promise.resolve(result);
         };
+        
+        let clientOptions: LanguageClientOptions = {
+                documentSelector: [{ scheme: 'file', language: 'rsl' }],
+        };
+
+
+
+
+
+        // const executable = process.platform === 'win32' ? 'start-ls-itlingo.bat' : 'start-ls-itlingo';
+        // const languageServerPath =  path.join('server', 'mydsl', 'bin', executable);
+        // const serverLauncher = context.asAbsolutePath(languageServerPath);
+        // const serverOptions: ServerOptions = {
+        //     run: {
+        //         command: serverLauncher,
+        //         args: ['-trace']
+        //     },
+        //     debug: {
+        //         command: serverLauncher,
+        //         args: ['-trace']
+        //     }
+        // };
+        // const clientOptions: LanguageClientOptions = {
+        //     documentSelector: [{ scheme: 'file', language: 'rsl' }],
+        // };
         const languageClient = new LanguageClient('RSLLanguageClient', 'RSL Language Server', serverOptions, clientOptions);
         languageClient.start();
         return languageClient;
