@@ -201,7 +201,7 @@ fi
 
 set -- \
         -classpath "$CLASSPATH" \
-        org.itlingo.rsl.ide.launch.RslServerLauncher \
+        org.itlingo.rsl.ide.launch.RslSocketServer \
         "$@"
 
 # Use "xargs" to parse quoted args.
