@@ -58,7 +58,7 @@ export class RSLLspVscodeExtension extends SprottyLspEditVscodeExtension {
     protected activateLanguageClient(context: vscode.ExtensionContext): LanguageClient {
 
         let connectionInfo = {
-            port: 5008
+            port: 6008
         };
         let serverOptions = () => {
             // Connect to language server via socket
