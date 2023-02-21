@@ -27,6 +27,8 @@ import { SprottyLspEditVscodeExtension }  from 'sprotty-vscode/lib/lsp/editing/s
 import { SprottyDiagramIdentifier, SprottyLspWebview } from 'sprotty-vscode/lib/lsp';
 import { SprottyWebview } from 'sprotty-vscode/lib/sprotty-webview';
 
+const LS_PORT = 3010
+
 export class RSLLspVscodeExtension extends SprottyLspEditVscodeExtension {
 
     constructor(context: vscode.ExtensionContext) {
@@ -58,7 +60,7 @@ export class RSLLspVscodeExtension extends SprottyLspEditVscodeExtension {
     protected activateLanguageClient(context: vscode.ExtensionContext): LanguageClient {
 
         let connectionInfo = {
-            port: 6008
+            port: LS_PORT
         };
         let serverOptions = () => {
             // Connect to language server via socket
