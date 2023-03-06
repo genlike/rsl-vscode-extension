@@ -6,3 +6,5 @@ pack
 *.vsix
 src-gen/
 *.tgz
+yarn.lock
+package-lock.json

@@ -38,6 +38,9 @@ Workflow {
 			junitSupport = {
 				junitVersion = "5"
 			}
+			fragment = io.typefox.xtext2langium.Xtext2LangiumFragment {
+                outputPath = './langium'
+            }
 		}
 	}
 }

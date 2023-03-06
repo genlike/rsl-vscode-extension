@@ -1,4 +1,5 @@
-tsconfig.json
-tslint.json
-*.log
-node_modules
+.vscode/**
+.vscode-test/**
+.gitignore
+langium-quickstart.md
+org.itlingo.rsl.parent
