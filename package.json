@@ -1,5 +1,8 @@
 {
     "name": "rsl-vscode-extension",
+    "repository": {
+        "url": "https://github.com/genlike/rsl-vscode-extension.git"
+    },
     "displayName": "rsl-vscode-extension",
     "description": "Please enter a brief description here",
     "version": "0.0.1",

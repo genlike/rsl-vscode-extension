@@ -1,17 +1,17 @@
-import chalk from 'chalk';
+// import chalk from 'chalk';
 import { Command } from 'commander';
-import { Model } from '../language-server/generated/ast';
+// import { Model } from '../language-server/generated/ast';
 import { RslLanguageMetaData } from '../language-server/generated/module';
-import { createRslServices } from '../language-server/rsl-module';
-import { extractAstNode } from './cli-util';
-import { generateJavaScript } from './generator';
-import { NodeFileSystem } from 'langium/node';
+// import { createRslServices } from '../language-server/rsl-module';
+// import { extractAstNode } from './cli-util';
+// import { generateJavaScript } from './generator';
+// import { NodeFileSystem } from 'langium/node';
 
 export const generateAction = async (fileName: string, opts: GenerateOptions): Promise<void> => {
-    const services = createRslServices(NodeFileSystem).Rsl;
-    const model = await extractAstNode<Model>(fileName, services);
-    const generatedFilePath = generateJavaScript(model, fileName, opts.destination);
-    console.log(chalk.green(`JavaScript code generated successfully: ${generatedFilePath}`));
+    // const services = createRslServices(NodeFileSystem).Rsl;
+    // const model = await extractAstNode<Model>(fileName, services);
+    // const generatedFilePath = generateJavaScript(model, fileName, opts.destination);
+    // console.log(chalk.green(`JavaScript code generated successfully: ${generatedFilePath}`));
 };
 
 export type GenerateOptions = {

@@ -1,35 +1,36 @@
 import {
     createDefaultModule, createDefaultSharedModule, DefaultSharedModuleContext, inject,
-    LangiumServices, LangiumSharedServices, Module, PartialLangiumServices
+    LangiumServices, LangiumSharedServices, 
+    // Module, PartialLangiumServices
 } from 'langium';
 import { RslGeneratedModule, RslGeneratedSharedModule } from './generated/module';
-import { RslValidator, registerValidationChecks } from './rsl-validator';
+// import { RslValidator, registerValidationChecks } from './rsl-validator';
 
 /**
  * Declaration of custom services - add your own service classes here.
  */
 export type RslAddedServices = {
-    validation: {
-        RslValidator: RslValidator
-    }
+    // validation: {
+    //     RslValidator: RslValidator
+    // }
 }
 
 /**
  * Union of Langium default services and your custom services - use this as constructor parameter
  * of custom service classes.
  */
-export type RslServices = LangiumServices & RslAddedServices
+ export type RslServices = LangiumServices & RslAddedServices
 
 /**
  * Dependency injection module that overrides Langium default services and contributes the
  * declared custom services. The Langium defaults can be partially specified to override only
  * selected services, while the custom services must be fully specified.
  */
-export const RslModule: Module<RslServices, PartialLangiumServices & RslAddedServices> = {
-    validation: {
-        RslValidator: () => new RslValidator()
-    }
-};
+// export const RslModule: Module<RslServices, PartialLangiumServices & RslAddedServices> = {
+//     validation: {
+//         RslValidator: () => new RslValidator()
+//     }
+// };
 
 /**
  * Create the full set of services required by Langium.
@@ -57,9 +58,9 @@ export function createRslServices(context: DefaultSharedModuleContext): {
     const Rsl = inject(
         createDefaultModule({ shared }),
         RslGeneratedModule,
-        RslModule
+        // RslModule
     );
     shared.ServiceRegistry.register(Rsl);
-    registerValidationChecks(Rsl);
+    // registerValidationChecks(Rsl);
     return { shared, Rsl };
 }
